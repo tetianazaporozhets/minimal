@@ -90,23 +90,26 @@ $(document).ready(function () {
     }
     console.log(errorCount);
   };
-  const clearForm = () => {
+  /* const clearForm = () => {
     form.reset();
-  };
+  }; */
 
   sendBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    checkForm([username, email, budget, subject]);
-    checkLength(username, 2);
-    checkLength(budget, 2);
-    checkMail(email);
-    checkErrors();
-    clearForm();
+    {
+      checkForm([username, email, budget, subject]);
+      checkLength(username, 2);
+      checkLength(budget, 2);
+      checkMail(email);
+      checkErrors();
+      /* clearForm(); */
+    }
   });
   closeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     closePopup();
   });
+
   const closePopup = () => {
     popup.classList.remove("show-popup");
     clearForm();
